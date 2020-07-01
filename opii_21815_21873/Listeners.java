@@ -558,7 +558,7 @@ public class Listeners extends GUI implements ActionListener{
                 for(Map.Entry<String,String> entry:humimap.entrySet()) {                
                     //Η λογική είναι ιδιαίτερα απλοική. Χωρίζω με βάση το κόμμμα που εισάγεται στον χάρτη τα δύο κομάτια του
                     //κειμένου και εξάγω την δεύτερη τιμή, την οποία και μετατρέπω σε ακέραιο.
-                    //Εδώ το χρησιμοποιώ για να βγάλω παρακάτω τον μέσο όρο υγρασίας των δοθέντων πόλλεων
+                    //Εδώ το χρησιμοποιώ για να βγάλω παρακάτω τον μέσο όρο υγρασίας των δοθέντων πόλεων
                     String []values_split  = entry.getValue().split(",");
                     int string_humidity = Integer.parseInt(values_split[1]);
                     System.out.println("Humidity of "+entry.getKey() +" is: "+string_humidity);
@@ -569,7 +569,7 @@ public class Listeners extends GUI implements ActionListener{
                 average_humidity = sum /i;
                 System.out.println("Average humidity="+average_humidity);
 
-                //Έλεγχος για κάθε υγρασία των πόλλεων που υπάρχουν στο χάρτη με τον μέσο όρο
+                //Έλεγχος για κάθε υγρασία των πόλεων που υπάρχουν στο χάρτη με τον μέσο όρο
                 //Η λογική είναι ίδια μόνο που τώρα το δεύτερο κομμάτι που παίρνω το συγκρίνω με τον μέσο όρο κάθε φορά
                 String map_names ="High humidity:";
                 for ( Map.Entry<String,String> entry:humimap.entrySet()) {
@@ -579,7 +579,7 @@ public class Listeners extends GUI implements ActionListener{
                        map_names +="\n"+(entry.getKey())+",";
                     }
                 }
-                //Συγκεντρώνω τις τιμές των πόλλεων που ταιριάζουν σε μία μεταβλητή κειμένου για ομαδοποίηση
+                //Συγκεντρώνω τις τιμές των πόλεων που ταιριάζουν σε μία μεταβλητή κειμένου για ομαδοποίηση
                 //Δημιουργία παραθύρου για να εμφανίσουμε τα αποτελέσματα στον χρήστη
                 JDialog window = new JDialog(frame,"HUMIDITY FOR CANDIDATE CITIES");
                 JPanel panel = new JPanel(new FlowLayout());
